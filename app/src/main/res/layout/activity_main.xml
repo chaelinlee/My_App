@@ -26,15 +26,19 @@
             android:layout_height="wrap_content"
             android:text="확인"
             android:id="@+id/check"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="건강뉴스"
+            android:id="@+id/networking"/>
     </LinearLayout>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="193dp"
         android:id="@+id/listview"
-        android:layout_weight="0.76"></ListView>
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:id="@+id/listview2"></ListView>
+        android:layout_weight="0.76">
+
+    </ListView>
+
 </LinearLayout>

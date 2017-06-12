@@ -8,21 +8,23 @@ import android.os.Parcelable;
  */
 
 public class Nutrient_Data implements Parcelable{
-    private String name="",nu1="",nu2="",nu3="";
+    private String name="",nu1="",nu2="",cate;
+    int isCheck = 0;
 
-    public Nutrient_Data(String name,String nu1,String n2,String nu3){
+    public Nutrient_Data(String name,String nu1,String nu2,String cate){
         this.name = name;
         this.nu1 = nu1;
         this.nu2 = nu2;
-        this.nu3 = nu3;
+
+        this.cate = cate;
 
     }
 
     protected Nutrient_Data(Parcel in) {
-        name = in.readString();
-        nu1 = in.readString();
-        nu2 = in.readString();
-        nu3 = in.readString();
+        this.name = in.readString();
+        this.nu1 = in.readString();
+        this.nu2 = in.readString();
+        this.cate = in.readString();
     }
 
     public static final Creator<Nutrient_Data> CREATOR = new Creator<Nutrient_Data>() {
@@ -47,7 +49,7 @@ public class Nutrient_Data implements Parcelable{
         dest.writeString(name);
         dest.writeString(nu1);
         dest.writeString(nu2);
-        dest.writeString(nu3);
+        dest.writeString(cate);
     }
 
 
@@ -75,12 +77,19 @@ public class Nutrient_Data implements Parcelable{
         this.nu2 = nu2;
     }
 
-    public String getNu3() {
-        return nu3;
+    public String getCate(){
+        return cate;
     }
 
-    public void setNu3(String nu3) {
-        this.nu3 = nu3;
+    public void setCate(String cate){
+        this.cate= cate;
     }
 
+    public int getIsCheck(){
+        return isCheck;
+    }
+
+    public void setIsCheck(int isCheck){
+        this.isCheck=isCheck;
+    }
 }
